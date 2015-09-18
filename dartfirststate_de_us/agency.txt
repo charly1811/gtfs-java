@@ -1,2 +1,0 @@
-agency_id,agency_name,agency_url,agency_timezone,agency_phone
-DART_DE,DART First State,http://www.dartfirststate.com,America/New_York,800.355.8080
