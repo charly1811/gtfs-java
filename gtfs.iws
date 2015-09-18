@@ -2,134 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b79f279c-a905-4f43-a9bb-017dc075894c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/cf/charleseugeneloubao/gtfs/feed/Agency.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/cf/charleseugeneloubao/gtfs/feed/Calendar.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/cf/charleseugeneloubao/gtfs/feed/CalendarDate.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/cf/charleseugeneloubao/gtfs/FeedDataReader.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/test/cf/charleseugeneloubao/gtfs/FeedDataReaderTest.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/cf/charleseugeneloubao/gtfs/feed/FeedObject.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/cf/charleseugeneloubao/Main.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/cf/charleseugeneloubao/gtfs/feed/Route.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/cf/charleseugeneloubao/gtfs/feed/Shape.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/cf/charleseugeneloubao/gtfs/feed/Stop.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/cf/charleseugeneloubao/gtfs/feed/StopTime.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/classes/main/cf/charleseugeneloubao/gtfs/feed/Trip.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/cache.properties.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileHashes.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileSnapshots.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/test-results/binary/test/output.bin.idx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/test-results/binary/test/output.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/outputFileStates.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/test-results/binary/test/results.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/taskArtifacts.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cf/charleseugeneloubao/gtfs/feed/Agency.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cf/charleseugeneloubao/gtfs/feed/Calendar.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cf/charleseugeneloubao/gtfs/feed/CalendarDate.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FeedClassesGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cf/charleseugeneloubao/gtfs/FeedDataReader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/cf/charleseugeneloubao/gtfs/FeedDataReaderTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cf/charleseugeneloubao/gtfs/feed/FeedObject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cf/charleseugeneloubao/gtfs/feed/Route.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cf/charleseugeneloubao/gtfs/feed/Shape.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cf/charleseugeneloubao/gtfs/feed/Stop.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cf/charleseugeneloubao/gtfs/feed/StopTime.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/test-results/TEST-cf.charleseugeneloubao.gtfs.FeedDataReaderTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cf/charleseugeneloubao/gtfs/feed/Trip.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dartfirststate_de_us/agency.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/reports/tests/css/base-style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/cache.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dartfirststate_de_us/calendar.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dartfirststate_de_us/calendar_dates.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/reports/tests/classes/cf.charleseugeneloubao.gtfs.FeedDataReaderTest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/reports/tests/packages/cf.charleseugeneloubao.gtfs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gradlew.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gradlew" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gtfs.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gtfs.ipr" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gtfs.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/reports/tests/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/reports/tests/js/report.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_10.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_101.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_102.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_103.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_104.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_105.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_106.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_107.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_108.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_109.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_11.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_112.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_113.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_117.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_12.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_120.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_15.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_16.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_17.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_18.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_20.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_201.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_203.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_204.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_205.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_206.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_207.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_208.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_21.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_212.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_22.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_23.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_24.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_25.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_28.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_30.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_301.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_303.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_305.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_32.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_33.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_34.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_35.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_38.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_39.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_4.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_40.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_41.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_42.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_43.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_44.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_45.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_46.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_5.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_54.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_55.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_59.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_6.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_61.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_62.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_64.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_7.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_8.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_9.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_901.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_902.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dart_first_state/route_903.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dartfirststate_de_us/routes.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/settings.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dartfirststate_de_us/shapes.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dartfirststate_de_us/stop_times.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dartfirststate_de_us/stops.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/reports/tests/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dartfirststate_de_us/trips.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtfs.iws" afterPath="$PROJECT_DIR$/gtfs.iws" />
     </list>
     <ignored path="gtfs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -220,11 +93,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readme.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8520548">
+            <state vertical-scroll-proportion="0.0">
               <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8520548">
+              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -512,6 +395,7 @@
         <option value="$PROJECT_DIR$/src/test/java/cf/charleseugeneloubao/gtfs/FeedDataReaderTest.java" />
         <option value="$PROJECT_DIR$/FeedClassesGenerator.java" />
         <option value="$PROJECT_DIR$/readme.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -792,7 +676,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -803,7 +687,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5699659" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935154" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935154" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34673747" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -973,8 +857,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8520548">
+        <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8520548">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
         </state>
       </provider>
