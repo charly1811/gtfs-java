@@ -1,0 +1,71 @@
+route_id,route_short_name,route_long_name,route_type
+1,1,Philadelphia Pike,3
+2,2,Concord Pike,3
+3,3,26th St./Lea Blvd.,3
+4,4,W. 4th St./Lancaster Ave.,3
+5,5,Maryland Avenue,3
+6,6,Kirkwood Highway,3
+7,7,Dupont St./Clayton St./Riverfront,3
+8,8,8th Street/9th  Street,3
+9,9,Boxwood Rd./Broom St./Vandever Ave,3
+10,10,Delaware Ave./Kennett Pike,3
+11,11,Washington St,3
+12,12,Baynard Blvd.,3
+15,15,New Castle Avenue,3
+16,16,Newark Express,3
+17,17,Dunleith/Holloway Terrace,3
+18,18,Milltown Road/Pike Creek,3
+20,20,Lancaster Pike,3
+21,21,Foulk Road,3
+22,22,Wilton/DuPont Highway,3
+23,23,University Plaza/Corporate Commons,3
+24,24,Gov. Printz Blvd.,3
+25,25,Delaware City/DuPont Highway,3
+28,28,A I Dupont Hospital/Nemours Clinic,3
+30,30,Limestone Road,3
+32,32,Wilmington Trolley,3
+33,33,Christiana Mall-Newark,3
+34,34,Marrows Rd./Christiana Mall,3
+35,35,Concord Pike/Shipley Road,3
+38,38,Arden Express,3
+39,39,Chestnut Hill Road Express,3
+40,40,US 40 Peoples Plaza,3
+41,41,US 40 Express,3
+42,42,Glasgow Express,3
+43,43,Middletown - Odessa,3
+44,44,Wrangle Hill DMV,3
+45,45,Wilmington/Odessa P&R,3
+46,46,Newark/Glasgow,3
+54,54,Christiana Mall/Wilton,3
+55,55,Old Baltimore Pike,3
+59,59,Amtrak Station - Newark Station Rai,3
+61,61,Naamans Road,3
+62,62,Churchmans Shuttle East,3
+64,64,US40 Feeder,3
+101,101,Walker Road,3
+102,102,Gateway West,3
+103,103,Rodney Village,3
+104,104,Camden Walmart,3
+105,105,Moores Lake Ctr,3
+106,106,Dover AFB,3
+107,107,Blue Hen Corp Ctr,3
+108,108,Towne Point,3
+109,109,Dover Mall,3
+112,112,DelTech,3
+113,113,West Dover,3
+117,117,Harrington/Dover,3
+120,120,Dover-Cheswold-Smyrna,3
+201,201,Rehoboth Beach,3
+203,203,North/Local,3
+204,204,Lewes,3
+205,205,Late Night/Local,3
+206,206,Georgetown/Lewes/Rehoboth,3
+207,207,Rehoboth/Long Neck/Pot-Nets,3
+208,208,Dewey/Bethany/Fenwick/Ocean City,3
+212,212,Georgetown/Seaford/Laurel,3
+301,301,Intercounty New Castle/Kent,3
+303,303,Dover/Milford/Georgetown,3
+305,305,Wilmington - Rehoboth,3
+901,901,Georgetown Flex,3
+902,902,Millsboro/Georgetown Flex,3
+903,903,SEAFORD FLEX,3
