@@ -1,14 +1,13 @@
 package cf.charleseugeneloubao.gtfs;
 
-import cf.charleseugeneloubao.gtfs.feed.Route;
-import cf.charleseugeneloubao.gtfs.feed.Stop;
-import cf.charleseugeneloubao.gtfs.feed.StopTime;
-import cf.charleseugeneloubao.gtfs.feed.Trip;
+import cf.charleseugeneloubao.gtfs.feed.*;
 import org.junit.Test;
 
 import java.io.*;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.Random;
 
 import static org.junit.Assert.*;
 
@@ -26,59 +25,84 @@ public class FeedDataReaderTest {
         File shapesFile = new File(feedFolder, "shapes.txt");
         File stopTimesFile = new File(feedFolder, "stop_times.txt");
 
-        LinkedHashMap<String, Stop> stops = new LinkedHashMap<>();
+        AgencyDatabase database = new AgencyDatabase((AgencyFeed) FeedDataReader.getFeedObjects(AgencyFeed.class,agencyFile).toArray()[0]);
 
-        for (Stop stop : FeedDataReader.getFeedObjects(Stop.class, stopsFile)) {
+        // Retrieve the list of stops from the file
+        LinkedHashMap<String, StopFeed> stops = new LinkedHashMap<>();
+        for (StopFeed stop : FeedDataReader.getFeedObjects(StopFeed.class, stopsFile)) {
             stops.put(stop.getStopId(), stop);
         }
 
-        LinkedHashMap<String, Route> routes = new LinkedHashMap<>();
+        // Adds all stops to the database
+        database.addStops(stops);
 
-        for (Route route : FeedDataReader.getFeedObjects(Route.class, routesFile)) {
+
+        // Retrieves the list of routes from the file and store them by id
+        LinkedHashMap<String, RouteFeed> routes = new LinkedHashMap<>();
+        for (RouteFeed route : FeedDataReader.getFeedObjects(RouteFeed.class, routesFile)) {
             routes.put(route.getRouteId(), route);
         }
 
-        LinkedHashMap<String, Trip> trips = new LinkedHashMap<>();
-
-        for (Trip trip : FeedDataReader.getFeedObjects(Trip.class, tripsFile)) {
+        // Retrieve the list of trips from the file and store them by id
+        LinkedHashMap<String, TripFeed> trips = new LinkedHashMap<>();
+        for (TripFeed trip : FeedDataReader.getFeedObjects(TripFeed.class, tripsFile)) {
             trips.put(trip.getTripId(), trip);
         }
 
-        LinkedHashMap<String, LinkedHashSet<StopTime>> stopTimes = new LinkedHashMap<>();
-        for (StopTime stopTime : FeedDataReader.getFeedObjects(StopTime.class, stopTimesFile)) {
+        //Retrieves the stops from the file
+        // Each stops belongs to a trip so stops are stored by trip id
+        LinkedHashMap<String, LinkedHashSet<StopTimeFeed>> stopTimes = new LinkedHashMap<>();
+        for (StopTimeFeed stopTime : FeedDataReader.getFeedObjects(StopTimeFeed.class, stopTimesFile)) {
             if (!trips.containsKey(stopTime.getTripId()))
                 continue;
 
-            String routeId = trips.get(stopTime.getTripId()).getRouteId();
-            if (!stopTimes.containsKey(routeId)) {
-                stopTimes.put(routeId, new LinkedHashSet<StopTime>());
+            if (!stopTimes.containsKey(stopTime.getTripId())) {
+                stopTimes.put(stopTime.getTripId(), new LinkedHashSet<StopTimeFeed>());
             }
-            stopTimes.get(routeId).add(stopTime);
+            stopTimes.get(stopTime.getTripId()).add(stopTime);
         }
 
-        FileWriter fileWriter;
 
-        File scheduleFolder = new File("dart_first_state");
+        // Add each trips to the database
+        for (TripFeed tripMetadata : trips.values()) {
+            RouteFeed routeMetaData = routes.get(tripMetadata.getRouteId());
+            LinkedHashSet<StopTimeFeed> busStops = stopTimes.get(tripMetadata.getTripId());
+            Trip trip = new Trip(busStops, tripMetadata);
+            database.addTrip(routeMetaData, trip);
+        }
+
+        // Let's try to read this database and write each routes to a particular file
+        File scheduleFolder = new File("schedule");
         scheduleFolder.mkdir();
 
         StringWriter stringWriter = new StringWriter();
-        PrintWriter printWriter = new PrintWriter(stringWriter,true);
+        PrintWriter printWriter;
 
-        for (String key : stopTimes.keySet()) {
-            Route route = routes.get(key);
-            System.out.printf("Writing schedule for route %s\n",route.getRouteId());
-            printWriter.printf("(Route %s) %s\n", route.getRouteId(), route.getRouteLongName());
-            for (StopTime stopTime : stopTimes.get(key)) {
-                Stop stop = stops.get(stopTime.getStopId());
-                printWriter.printf("%s : %s\n", stopTime.getArrivalTime(), stop.getStopName());
+        for (Route route : database.getRoutes()) {
+            File routeFile = new File(scheduleFolder,String.format("route_%s.txt",route.getMetaData().getRouteId()));
+            routeFile.createNewFile();
+
+            printWriter = new PrintWriter(stringWriter);
+            printWriter.printf("%s - %s\n",route.getMetaData().getRouteId(),route.getMetaData().getRouteLongName());
+            for (int i = 0; i < route.getMetaData().getRouteLongName().length()*2; i++) {
+                printWriter.print("*");
             }
+            printWriter.println();
+            printWriter.println();
 
-            File file = new File(scheduleFolder,"route_"+route.getRouteId()+".txt");
-            file.createNewFile();
-            fileWriter = new FileWriter(file,true);
-            fileWriter.write(stringWriter.toString());
+            for (String tripId : route.getTrips()) {
+                Trip trip = database.findTripById(tripId);
+                for (StopTimeFeed stopTimeFeed : trip.getStopTimes()) {
+                    printWriter.printf("%s | %s\n",stopTimeFeed.getArrivalTime(),database.findStopById(stopTimeFeed.getStopId()).getStopName());
+                }
+                printWriter.println();
+            }
+            String content = stringWriter.toString();
             stringWriter.getBuffer().setLength(0);
+            printWriter = new PrintWriter(routeFile);
+            printWriter.println(content);
+            printWriter.flush();
         }
-    }
 
+    }
 }

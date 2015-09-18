@@ -15,17 +15,17 @@ public class FeedClassesGenerator {
             File gen = new File("gen");
             gen.mkdir();
             
-            File feedObjectClass = new File(gen,"FeedObject.java");
+            File feedObjectClass = new File(gen,"Feed.java");
             feedObjectClass.createNewFile();
                
             FileWriter feedObjectWriter = new FileWriter(feedObjectClass,true);
             feedObjectWriter.write("import java.util.HashMap;\n\n");
-            feedObjectWriter.write("public class FeedObject extends HashMap<String,String> {}");
+            feedObjectWriter.write("public class Feed extends HashMap<String,String> {}");
             feedObjectWriter.flush();
             
         for(File file : folder.listFiles()) {
 
-            String className = getCamelCaseName(file.getName());
+            String className = getCamelCaseName(file.getName())+"Feed";
             System.out.println("Generating "+className+".java");
             
             String classCode = "";
@@ -39,7 +39,7 @@ public class FeedClassesGenerator {
                 methods.add(methodDeclaration);
             }
             classCode = "import java.util.HashMap;\n\n";
-            classCode = classCode.concat(String.format("public class %s extends FeedObject{\n\n",className));
+            classCode = classCode.concat(String.format("public class %s extends Feed {\n\n",className));
             for(String method: methods) {
                 classCode = classCode.concat(method);
                 classCode = classCode.concat("\n\n");
