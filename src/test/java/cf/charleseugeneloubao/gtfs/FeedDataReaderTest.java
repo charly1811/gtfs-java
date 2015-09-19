@@ -1,15 +1,11 @@
 package cf.charleseugeneloubao.gtfs;
 
+import cf.charleseugeneloubao.collect.MultiMapLinkedHashMap;
 import cf.charleseugeneloubao.gtfs.feed.*;
 import org.junit.Test;
 
 import java.io.*;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.Random;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by charl on 9/18/2015.
@@ -17,92 +13,62 @@ import static org.junit.Assert.*;
 public class FeedDataReaderTest {
     @Test
     public void testGetFeedObjects() throws IOException {
+
         File feedFolder = new File("dartfirststate_de_us");
         File agencyFile = new File(feedFolder, "agency.txt");
         File routesFile = new File(feedFolder, "routes.txt");
         File tripsFile = new File(feedFolder, "trips.txt");
         File stopsFile = new File(feedFolder, "stops.txt");
-        File shapesFile = new File(feedFolder, "shapes.txt");
         File stopTimesFile = new File(feedFolder, "stop_times.txt");
 
-        AgencyDatabase database = new AgencyDatabase((AgencyFeed) FeedDataReader.getFeedObjects(AgencyFeed.class,agencyFile).toArray()[0]);
+        LinkedHashMap<String, TripDetails> tripDetailsMap = new LinkedHashMap<>();
+        LinkedHashMap<String, TripFeed> tripFeedMap = new LinkedHashMap<>();
+        LinkedHashMap<String, StopFeed> stopFeedMap = new LinkedHashMap<>();
+        LinkedHashMap<String, RouteFeed> routeFeedMap = new LinkedHashMap<>();
+
+        // Creates the agency feed from the file
+        AgencyFeed agencyFeed = (AgencyFeed) FeedDataReader.getFeedObjects(AgencyFeed.class, agencyFile).toArray()[0];
 
         // Retrieve the list of stops from the file
-        LinkedHashMap<String, StopFeed> stops = new LinkedHashMap<>();
         for (StopFeed stop : FeedDataReader.getFeedObjects(StopFeed.class, stopsFile)) {
-            stops.put(stop.getStopId(), stop);
+            stopFeedMap.put(stop.getStopId(), stop);
         }
 
-        // Adds all stops to the database
-        database.addStops(stops);
-
-
         // Retrieves the list of routes from the file and store them by id
-        LinkedHashMap<String, RouteFeed> routes = new LinkedHashMap<>();
         for (RouteFeed route : FeedDataReader.getFeedObjects(RouteFeed.class, routesFile)) {
-            routes.put(route.getRouteId(), route);
+            routeFeedMap.put(route.getRouteId(), route);
         }
 
         // Retrieve the list of trips from the file and store them by id
-        LinkedHashMap<String, TripFeed> trips = new LinkedHashMap<>();
         for (TripFeed trip : FeedDataReader.getFeedObjects(TripFeed.class, tripsFile)) {
-            trips.put(trip.getTripId(), trip);
+            tripDetailsMap.put(trip.getTripId(), new TripDetails(trip.getRouteId(), trip.getTripId()));
+            tripFeedMap.put(trip.getTripId(), trip);
         }
 
-        //Retrieves the stops from the file
-        // Each stops belongs to a trip so stops are stored by trip id
-        LinkedHashMap<String, LinkedHashSet<StopTimeFeed>> stopTimes = new LinkedHashMap<>();
-        for (StopTimeFeed stopTime : FeedDataReader.getFeedObjects(StopTimeFeed.class, stopTimesFile)) {
-            if (!trips.containsKey(stopTime.getTripId()))
-                continue;
-
-            if (!stopTimes.containsKey(stopTime.getTripId())) {
-                stopTimes.put(stopTime.getTripId(), new LinkedHashSet<StopTimeFeed>());
-            }
-            stopTimes.get(stopTime.getTripId()).add(stopTime);
+        // Retrieves the list of stop times and adds them to the corresponding TripDetails instance
+        for (StopTimeFeed stopTimeFeed : FeedDataReader.getFeedObjects(StopTimeFeed.class, stopTimesFile)) {
+            tripDetailsMap.get(stopTimeFeed.getTripId()).addStopTime(stopTimeFeed);
         }
 
-
-        // Add each trips to the database
-        for (TripFeed tripMetadata : trips.values()) {
-            RouteFeed routeMetaData = routes.get(tripMetadata.getRouteId());
-            LinkedHashSet<StopTimeFeed> busStops = stopTimes.get(tripMetadata.getTripId());
-            Trip trip = new Trip(busStops, tripMetadata);
-            database.addTrip(routeMetaData, trip);
+        // Map each Trip details to its RouteId;
+        MultiMapLinkedHashMap<String,String> tripsDetailsByRouteMap = new MultiMapLinkedHashMap<>();
+        for (TripDetails tripDetails: tripDetailsMap.values()) {
+            tripsDetailsByRouteMap.put(tripDetails.getRouteId(),tripDetails.getTripId());
         }
 
-        // Let's try to read this database and write each routes to a particular file
-        File scheduleFolder = new File("schedule");
-        scheduleFolder.mkdir();
+        PrintWriter stringWriter = new PrintWriter(new StringWriter());
+        FileWriter fileWriter;
 
-        StringWriter stringWriter = new StringWriter();
-        PrintWriter printWriter;
-
-        for (Route route : database.getRoutes()) {
-            File routeFile = new File(scheduleFolder,String.format("route_%s.txt",route.getMetaData().getRouteId()));
-            routeFile.createNewFile();
-
-            printWriter = new PrintWriter(stringWriter);
-            printWriter.printf("%s - %s\n",route.getMetaData().getRouteId(),route.getMetaData().getRouteLongName());
-            for (int i = 0; i < route.getMetaData().getRouteLongName().length()*2; i++) {
-                printWriter.print("*");
-            }
-            printWriter.println();
-            printWriter.println();
-
-            for (String tripId : route.getTrips()) {
-                Trip trip = database.findTripById(tripId);
-                for (StopTimeFeed stopTimeFeed : trip.getStopTimes()) {
-                    printWriter.printf("%s | %s\n",stopTimeFeed.getArrivalTime(),database.findStopById(stopTimeFeed.getStopId()).getStopName());
-                }
-                printWriter.println();
-            }
-            String content = stringWriter.toString();
-            stringWriter.getBuffer().setLength(0);
-            printWriter = new PrintWriter(routeFile);
-            printWriter.println(content);
-            printWriter.flush();
+        TripDetails details = tripDetailsMap.get(tripsDetailsByRouteMap.get("112").toArray()[1]);
+        RouteFeed routeFeed = routeFeedMap.get(details.getRouteId());
+        System.out.printf("%s  - %s\n",routeFeed.getRouteId(),routeFeed.getRouteLongName());
+        for (int i =0; i < routeFeed.getRouteLongName().length()*2; i++) {
+            System.out.print("*");
         }
-
+        System.out.println();
+        for (StopTimeFeed feed : details.getStopTimes()) {
+            System.out.printf("%s | %s\n", feed.getArrivalTime(), stopFeedMap.get(feed.getStopId()).getStopName());
+        }
     }
+
 }

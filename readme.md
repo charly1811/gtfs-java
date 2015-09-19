@@ -9,12 +9,10 @@ However you can re-create these source codes for any GFTS feed by using the Feed
 ## How to use FeedClassesGenerator
 ```
 javac FeedClassesGenerator.java
-```
-
-```
 java FeedClassesGenerator $GTFS_FEED_FOLDER
 ```
 
-The program will generate the classes for your specific data.
-
-An example of gtfs data is included (__dartfirststate_de_us__). If you will use ```gradlew test``` You *MUST NOT* delete this folder
+## Sample
+```
+gradlew test
+```

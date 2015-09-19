@@ -4,11 +4,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-/**
- * Created by charl on 9/18/2015.
- */
 public class FeedDataReader {
 
+    /**
+     * Read the data in the specified file and store the values in an instance of the specified class
+     * @param tClass Must implement {@link HashMap}
+     * @param file The file to read
+     * @throws FileNotFoundException
+     */
     public static <T extends HashMap<String,String>> LinkedHashSet<T> getFeedObjects(Class<T> tClass, File file) throws FileNotFoundException {
         LinkedHashSet<T> objects = new LinkedHashSet<>();
 
