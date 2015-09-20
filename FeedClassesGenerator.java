@@ -57,7 +57,11 @@ public class FeedClassesGenerator {
 
     private static String getCamelCaseName(String name) {
         String camelCaseName = "";
-        String[] parts = name.replace("txt","").replace("s.","").replace(".","").split("_");
+        String[] parts = name.replace("txt","")
+                .replace("ies","y")
+                .replace("s","")
+                .replace(".","")
+                .split("_");
         for (String part : parts) {
             camelCaseName = camelCaseName.concat(Character.toUpperCase(part.charAt(0))+part.substring(1));
         }
